@@ -1,0 +1,51 @@
+.nrc {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.nrc-left-side {
+  width: 30%;
+  overflow-y: auto;
+}
+
+.nrc-right-side {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.nrc-header {
+  height: 4%;
+  display: block;
+}
+
+
+.mat-sidenav {
+  width: 100px;
+}
+
+.nrc-sidenav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.nrc-s-search-input {
+  flex: none;
+}
+
+.nrc-s-note-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.nrc-sidenav-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.nrc-s-c-body {
+  flex: 1;
+  overflow-y: auto;
+}

@@ -1,0 +1,34 @@
+<div id="app-header">
+  <div id="ah-left-side">
+    <ng-container *ngFor="let element of settings.leftSide">
+      <app-icon
+        *ngIf="element.type == 'icon-button'"
+        [icon]="element.icon"
+        [func]="element.func"
+      ></app-icon>
+      <app-opener-dialog
+        *ngIf="element.type == 'dialog-button'"
+        [okFn]="element.func"
+        [icon]="element.icon"
+      ></app-opener-dialog>
+    </ng-container>
+  </div>
+  <div id="ah-center-side">Notes</div>
+  <div id="ah-right-side">
+    <ng-container *ngFor="let element of settings.rightSide">
+      <app-icon
+        *ngIf="element.type === 'icon-button'"
+        [icon]="element.icon"
+        [func]="element.func"
+        ></app-icon>
+      <ng-container *ngIf="element.type === 'dialog-button'">
+        <app-opener-dialog
+          [okFn]="element.func"
+          [icon]="element.icon"
+          ></app-opener-dialog>
+      </ng-container>
+      
+    </ng-container>
+  </div>
+</div>
+

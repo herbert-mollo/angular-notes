@@ -1,0 +1,10 @@
+<div id="app-note-list">
+  <app-note-item
+    *ngFor="let note of notes"
+    [note]="note"
+    [searchTerm]="searchTerm"
+    [deleteFn]="deleteFn"
+    (click)="selectFn(note)"
+  >
+  </app-note-item>
+</div>

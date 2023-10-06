@@ -1,0 +1,27 @@
+<app-sidenav
+  [sidenavContainerClass]="'nrc'"
+  [sidenavClass]="'nrc-left-side'"
+  [sidenavContentClass]="'nrc-right-side'"
+  [showSidenav]="showSidenav"
+>
+  <div sidenav class="nrc-sidenav">
+    <app-header class="nrc-header" [settings]="headerSidenavSettings"></app-header>
+    <app-search-input
+      class="nrc-s-search-input"
+      [searchFn]="search"
+      [reloadFn]="reload"
+    ></app-search-input>
+    <app-note-list
+      class="nrc-s-note-list"
+      [notes]="filteredNotes"
+      [searchTerm]="searchTerm"
+      [deleteFn]="delete"
+      [selectFn]="select"
+    ></app-note-list>
+  </div>
+  <div sidenav-content class="nrc-sidenav-content">
+    <app-header class="nrc-header" [settings]="headerContentSettings">
+    </app-header>
+    <app-body class="nrc-s-c-body" [note]="selectedNote" [editFn]="edit"></app-body>
+  </div>
+</app-sidenav>

@@ -1,0 +1,11 @@
+<div class="app-input">
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      [(ngModel)]="value"
+      (focusout)="onFocusOut($event)"
+      (input)="onInputChange($event)"
+    >
+  </mat-form-field>
+</div>
