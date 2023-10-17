@@ -4,11 +4,12 @@ import { Note } from 'src/app/shared/models/note';
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
-  styleUrls: ['./body.component.css']
+  styleUrls: ['./body.component.scss']
 })
 export class BodyComponent {
   @Input() note: Note = new Note();
   @Input() editFn: Function = () => {};
+  @Input() searchTerm: string = '';
 
   editTitle = (title: string) =>{
     console.log({title});

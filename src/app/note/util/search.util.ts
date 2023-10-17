@@ -26,3 +26,34 @@ export const findAndReplace = (targetNote: Note, notes: Note[]) => {
     notes.splice(index, 1, targetNote);
   }
 }
+
+export const addHighlightClass = (text: string, searchTerm: string) => {
+  if (searchTerm === '') {
+    return text;
+  }
+
+  const regex = new RegExp(searchTerm, 'gi');
+  const response = text.replace(
+    regex, '<span class="highlight">$&</span>'
+  );
+
+  return response;
+}
+
+export const substringAndHighlightClass = (
+  text: string,
+  searchTerm: string
+) => {
+  if (searchTerm === '') {
+    return text;
+  }
+
+  const subText = getSubstringByWord(text, searchTerm);
+  const regex = new RegExp(searchTerm, 'gi');
+  const response = subText.replace(
+    regex, '<span class="highlight">$&</span>'
+  );
+
+  return response;
+}
+

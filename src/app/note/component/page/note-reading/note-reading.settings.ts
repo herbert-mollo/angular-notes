@@ -16,7 +16,13 @@ export const headerSidenavSettings = (
 }
 
 export const headerContentSettings = (
-  { toggleSidenav }: { toggleSidenav: Function }
+  {
+    toggleSidenav, toggleDarkTheme
+  }:
+  {
+    toggleSidenav: Function,
+    toggleDarkTheme: Function
+  }
 ) => {
   return ({
     leftSide: [
@@ -25,6 +31,12 @@ export const headerContentSettings = (
         type: 'icon-button',
         icon: 'chrome_reader_mode',
         func: toggleSidenav,
+      },
+      {
+        id: 'toggle-dark-mode',
+        type: 'icon-button',
+        icon: 'color_lens',
+        func: toggleDarkTheme,
       },
     ]
   });

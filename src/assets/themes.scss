@@ -1,0 +1,68 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+// Define a dark theme
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: mat.define-palette(mat.$red-palette),
+   accent: mat.define-palette(mat.$red-palette),
+ ),
+
+  // Only include `typography` and `density` in the default dark theme.
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+// Define a light theme
+$light-theme: mat.define-light-theme((
+ color: (
+   primary: mat.define-palette(mat.$indigo-palette, 500),
+   accent: mat.define-palette(mat.$pink-palette, 500),
+ ),
+));
+
+// Apply the light theme only when the user prefers light themes.
+@media (prefers-color-scheme: light) {
+ // Use the `-color` mixins to only apply color styles without reapplying the same
+ // typography and density styles.
+ 
+}
+
+$my-dark-palette: mat.define-palette(mat.$red-palette);
+$my-grey-palette: mat.define-palette(mat.$grey-palette);
+$my-light-palette: mat.define-palette(mat.$light-green-palette);
+
+.app-light-theme {
+  // @include mat.core-color($light-theme);
+  // @include mat.button-color($light-theme);
+  // background: mat.get-color-from-palette($my-grey-palette, 300);
+  // color: mat.get-color-from-palette($my-light-palette, default);
+  @include mat.all-component-themes($light-theme)
+}
+
+.app-dark-theme{
+  // @include mat.core-theme($dark-theme);
+  // @include mat.button-theme($dark-theme);
+
+  @include mat.all-component-themes($dark-theme);
+  // background: mat.get-color-from-palette($my-grey-palette, 900);
+  // color: mat.get-color-from-palette($my-dark-palette, 100);
+
+}
+
+.z-x-light-theme {
+  $light-primary: mat.define-palette(mat.$deep-purple-palette);
+  $light-accent: mat.define-palette(mat.$red-palette);
+  $light-warn: mat.define-palette(mat.$teal-palette);
+
+  $light-theme: mat.define-light-theme((
+    color: (
+      primary: $light-primary,
+      accent: $light-accent,
+      warn: $light-warn
+      )
+  ));
+
+  @include mat.all-component-themes($light-theme)
+
+}

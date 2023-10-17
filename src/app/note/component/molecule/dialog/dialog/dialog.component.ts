@@ -5,7 +5,7 @@ import { Note } from 'src/app/shared/models/note';
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.css']
+  styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
   constructor(

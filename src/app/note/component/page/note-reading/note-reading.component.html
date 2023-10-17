@@ -22,6 +22,11 @@
   <div sidenav-content class="nrc-sidenav-content">
     <app-header class="nrc-header" [settings]="headerContentSettings">
     </app-header>
-    <app-body class="nrc-s-c-body" [note]="selectedNote" [editFn]="edit"></app-body>
+    <app-body 
+      class="nrc-s-c-body"
+      [note]="selectedNote"
+      [editFn]="edit"
+      [searchTerm]="searchTerm"
+    ></app-body>
   </div>
 </app-sidenav>

@@ -15,6 +15,7 @@ import { SidenavComponent } from './component/molecule/sidenav/sidenav.component
 import { SearchInputComponent } from './component/atom/search-input/search-input.component';
 import { TextAreaInputComponent } from './component/atom/text-area-input/text-area-input.component';
 import { InputComponent } from './component/atom/input/input.component';
+import { DivContentEditableComponent } from './component/atom/div-content-editable/div-content-editable.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { InputComponent } from './component/atom/input/input.component';
     SearchInputComponent,
     TextAreaInputComponent,
     InputComponent,
+    DivContentEditableComponent,
   ],
   imports: [
     CommonModule,

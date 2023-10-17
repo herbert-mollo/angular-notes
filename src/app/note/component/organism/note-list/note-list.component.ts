@@ -5,7 +5,7 @@ import { Note } from 'src/app/shared/models/note';
 @Component({
   selector: 'app-note-list',
   templateUrl: './note-list.component.html',
-  styleUrls: ['./note-list.component.css']
+  styleUrls: ['./note-list.component.scss']
 })
 export class NoteListComponent {
   @Input() notes: Note[] = [];

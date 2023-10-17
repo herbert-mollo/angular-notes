@@ -1,12 +1,12 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Note } from 'src/app/shared/models/note';
 import { DomSanitizer } from '@angular/platform-browser';
-import { getSubstringByWord } from 'src/app/note/util/search.util';
+import { substringAndHighlightClass } from 'src/app/note/util/search.util';
 
 @Component({
   selector: 'app-note-item',
   templateUrl: './note-item.component.html',
-  styleUrls: ['./note-item.component.css'],
+  styleUrls: ['./note-item.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class NoteItemComponent {
@@ -24,15 +24,7 @@ export class NoteItemComponent {
   }
 
   highlightText(text: string, searchTerm: string) {
-    if (searchTerm === '') {
-      return text;
-    }
-
-    const subText = getSubstringByWord(text, searchTerm);
-    const regex = new RegExp(searchTerm, 'gi');
-    const response = subText.replace(
-      regex, '<span class="highlight">$&</span>'
-    );
+    const response = substringAndHighlightClass(text, searchTerm);
 
     return this.sanitizeHtml(response);
   }

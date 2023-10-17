@@ -1,14 +1,16 @@
 <div id="app-body">
-  <app-input
+  <app-div-content-editable
     class="ab-input"
     [value]="note.title"
     [editFn]="editTitle"
+    [searchTerm]="searchTerm"
   >
-  </app-input>
-  <app-text-area-input
+  </app-div-content-editable>
+  <app-div-content-editable
     class="ab-text-area-input"
     [value]="note.content"
     [editFn]="editContent"
+    [searchTerm]="searchTerm"
   >
-  </app-text-area-input>
+  </app-div-content-editable>
 </div>

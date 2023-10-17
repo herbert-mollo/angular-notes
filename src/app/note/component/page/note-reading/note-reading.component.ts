@@ -5,11 +5,12 @@ import { headerContentSettings, headerSidenavSettings } from './note-reading.set
 import { HeaderSideSettings } from '../../molecule/header/header.settings';
 import { filterByString, findAndReplace } from 'src/app/note/util/search.util';
 import { v4 as uuidv4 } from 'uuid';
+import { ThemeService } from 'src/app/src/app/shared/theme/theme.service';
 
 @Component({
   selector: 'app-note-reading',
   templateUrl: './note-reading.component.html',
-  styleUrls: ['./note-reading.component.css'],
+  styleUrls: ['./note-reading.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class NoteReadingComponent implements OnInit {
@@ -21,10 +22,14 @@ export class NoteReadingComponent implements OnInit {
   headerSidenavSettings: HeaderSideSettings;
   headerContentSettings: HeaderSideSettings;
 
-  constructor(private noteService: NoteService) {
+  constructor(
+    private noteService: NoteService,
+    private themeService: ThemeService
+  ) {
     this.headerSidenavSettings = headerSidenavSettings({add: this.add});
     this.headerContentSettings = headerContentSettings({
-      toggleSidenav: this.toggleSidenav
+      toggleSidenav: this.toggleSidenav,
+      toggleDarkTheme: this.toggleDarkTheme
     });
   }
 
@@ -81,6 +86,10 @@ export class NoteReadingComponent implements OnInit {
 
   toggleSidenav = () => {
     this.showSidenav = !this.showSidenav;
+  }
+
+  toggleDarkTheme = () => {
+    this.themeService.toggleDarkTheme();
   }
 
   search = (text: string) => {

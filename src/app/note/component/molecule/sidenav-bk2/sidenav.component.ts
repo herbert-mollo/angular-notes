@@ -4,7 +4,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css'],
+  styleUrls: ['./sidenav.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class SidenavComponent {
