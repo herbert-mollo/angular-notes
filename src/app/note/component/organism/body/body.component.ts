@@ -12,7 +12,6 @@ export class BodyComponent {
   @Input() searchTerm: string = '';
 
   editTitle = (title: string) =>{
-    console.log({title});
     this.note.title = title;
     this.editFn(this.note);
   }

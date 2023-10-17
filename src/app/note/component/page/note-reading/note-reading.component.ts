@@ -67,7 +67,6 @@ export class NoteReadingComponent implements OnInit {
   }
 
   edit = (note: Note) => {
-    console.log({edit: "edit", note});
     this.noteService.edit(note).subscribe({
       next: (note) => {
         this.selectedNote = note;
@@ -79,7 +78,10 @@ export class NoteReadingComponent implements OnInit {
 
   delete = (note: Note) => {
     this.noteService.delete(note).subscribe({
-      next: () => this.ngOnInit(),
+      next: () => {
+        this.reload();
+        this.selectedNote = new Note();
+      },
       error: e => console.log({ "delete error": e }),
     });
   }
